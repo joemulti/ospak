@@ -1,7 +1,16 @@
-import requests
-apiUrl = "https://api.ciscospark.com/v1/rooms"
-access_token = "YzkwYWFjYWEtYmFkZi00ZThlLTk5M2YtOTg5MGFhYjhlZGM0OTA1ODU5OTMtZGNl_PF84_b26cc13b-37f7-4057-ab70-3e0f679db605"
+# Dieses Beispiel holt sich mittels eines Get Befehls die Räume des Nutzers mit dem angegebenen Access Token
 
+# Das Script arbeitet mit der Library "requests". Gegebenenfalls muss diese mit "pip install requests" nachinstalliert werden.
+import requests
+import 
+
+# Gemäss der API Dokumentation sind alle Aktionen bezüglich Räumen unter folgender URL abzurufen.
+apiUrl = "https://api.ciscospark.com/v1/rooms"
+
+# Das Access Token findet man unter "developer.webex.com"
+access_token = access_token
+
+# 
 httpHeaders = {"Content-type" : "application/json", "Authorization" : "Bearer " + access_token}
 
 # Die folgenden Query Parameter sind optional
