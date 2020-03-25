@@ -1,7 +1,10 @@
 from dotenv import load_dotenv
 load_dotenv()
 import requests
-import os 
+import os
+#Zum Verarbeiten der JSON Daten
+import json
+import time
 
 # Das Script arbeitet mit der Library "requests". Gegebenenfalls muss diese mit "pip install requests" nachinstalliert werden.
 
@@ -21,5 +24,20 @@ body = {"roomId" : room_ID, "text" : "Testnachricht"}
 response = requests.post(url=apiUrl, json=body, headers=httpHeaders)
 
 #Der Statuscode, sowie die Rückgabe wird auf dem Terminal ausgegeben.
-print(response.status_code)
-print(response.text)
+# print(response.status_code)
+# print(response.text)
+
+# der Rückgabetext wird zur weiteren Verarbeitung in ein Json Dict namens data überführt
+data = json.loads(response.text)
+
+#Wir geben die ID der Nachricht aus.
+print (data['id'])
+dataID=str(data['id'])
+
+#Wir warten 5 Sekunden
+time.sleep(5)
+apiUrl = "https://api.ciscospark.com/v1/messages/" + dataID
+body = {}
+
+#Und löschen unsere Nachricht wieder
+response = requests.delete(url=apiUrl, json=body, headers=httpHeaders)

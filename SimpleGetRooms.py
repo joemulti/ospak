@@ -10,7 +10,7 @@ import os
 apiUrl = "https://api.ciscospark.com/v1/rooms"
 
 # Das Access Token findet man unter "developer.webex.com"
-access_token = os.getenv("AccessToken")
+access_token = os.getenv("ACCESSTOKEN")
 # 
 httpHeaders = {"Content-type" : "application/json", "Authorization" : "Bearer " + access_token}
 
