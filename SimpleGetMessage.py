@@ -4,11 +4,11 @@ import requests
 import os
 import json
 
-messageID=os.getenv"MESSAGEID"
+messageID=os.getenv("MESSAGEID")
 
 
 # Das Script arbeitet mit der Library "requests". Gegebenenfalls muss diese mit "pip install requests" nachinstalliert werden.
-apiUrl = "https://api.ciscospark.com/v1/messages/"+messageID
+apiUrl = "https://api.ciscospark.com/v1/messages/" + str(messageID)
 access_token = os.getenv("ACCESSTOKEN")
 httpHeaders = {"Content-type" : "application/json", "Authorization" : "Bearer " + access_token}
 

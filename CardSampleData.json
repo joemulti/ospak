@@ -1,0 +1,28 @@
+{
+    "title": "Publish Adaptive Card Schema",
+    "description": "Bitte geben Sie unten das Datum Ihres Kursbesuchs an. Drücken Sie danach auf 'Eingabe'",
+    "creator": {
+        "name": "Björn Engel",
+        "profileImage": "https://c74213ddaf67eb02dabb-04de5163e3f90393a9f7bb6f7f0967f1.ssl.cf1.rackcdn.com/V1~dd4108febf484db98f6a7e0c819ea103~8zzkbIomQdCxfxZ3JzxY8Q==~1600"
+    },
+    "createdUtc": "2020-03-27T06:08:39Z",
+    "viewUrl": "https://adaptivecards.io",
+    "properties": [
+        {
+            "key": "Kurs",
+            "value": "Webex Teams"
+        },
+        {
+            "key": "Trainer",
+            "value": "Björn Engel"
+        },
+        {
+            "key": "Durchführungsort",
+            "value": "Online"
+        },
+        {
+            "key": "Besuchsdatum",
+            "value": "Nicht gesetzt"
+        }
+    ]
+}

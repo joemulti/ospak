@@ -1,3 +1,7 @@
+# Dieses File dient nur zur Demonstration von Webhooks. Ein eingerichteter Webhook feuert auf
+# den hier implementierten Server. Nach Eingang des Webhooks, holt sich das System den
+# eingegebenen Text und wirft diesen auf der Konsole aus.
+
 from flask import Flask, request
 import json
 import re
@@ -13,10 +17,8 @@ def getMessage(messageID):
     body = {}
     response = requests.get(url=apiUrl, json=body, headers=httpHeaders)
     data=json.loads(response.text)
-    print (data['text'])
-    
-
-
+    print (data['personEmail'] + ' schrieb: ' + data['text'])
+ 
 
 @app.route('/', methods=['POST','GET'])
 def index():
@@ -26,6 +28,7 @@ def index():
     if request.method=='POST':
           
         data=json.loads(request.data)
+        print(data)
         # print (data['data']['id'])
         messageID=data['data']['id']
         getMessage(messageID)
