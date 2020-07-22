@@ -9,10 +9,14 @@ import os
 # Gemäss der API Dokumentation sind alle Aktionen bezüglich Räumen unter folgender URL abzurufen.
 apiUrl = "https://api.ciscospark.com/v1/rooms"
 
+#apiUrl = os.getenv("NGROKURL")
+
 # Das Access Token findet man unter "developer.webex.com"
 access_token = os.getenv("ACCESSTOKEN")
 # 
 httpHeaders = {"Content-type" : "application/json", "Authorization" : "Bearer " + access_token}
+
+print("Meine Header : " + str(httpHeaders))
 
 # Die folgenden Query Parameter sind optional
 # queryParams = {"sortBy" : "lastactivity", "max" : "2"}

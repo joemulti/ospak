@@ -28,7 +28,7 @@ def index():
     if request.method=='POST':
           
         data=json.loads(request.data)
-        print(data)
+        # print(data)
         # print (data['data']['id'])
         messageID=data['data']['id']
         getMessage(messageID)

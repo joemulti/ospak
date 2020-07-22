@@ -1,4 +1,4 @@
-# Das Script holt sich die Nachrichten eines Raumes (50 per Default) und löscht diese
+# Das Script holt sich die Nachrichten eines Raumes (50 per Default) und löscht diese - Hierzu ist allerdings das "ProPack", da hier ein User mit Compliance Rechten notwendig ist.
 from dotenv import load_dotenv
 load_dotenv()
 import requests

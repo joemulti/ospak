@@ -14,7 +14,7 @@ apiUrl = "https://api.ciscospark.com/v1/messages"
 # Die Header Information wird gefüllt, sowie unser Access Token angehängt.
 httpHeaders = {"Content-type" : "application/json", "Authorization" : "Bearer " + access_token}
 
-# Die Body Information wird gefüllt
+# Die Body Information wird gefüllt und der key 'text' mit einem Wert- unserer Nachricht befüllt
 body = {"roomId" : room_ID, "text" : "Testnachricht"}
 
 #Die Nachricht wird verschickt, und die Rückgabe wird in der Variable "response" gespeichert
