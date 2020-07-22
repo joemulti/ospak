@@ -3,7 +3,7 @@ load_dotenv()
 import requests
 import os 
 import json
-
+import initLab
 # Das Script arbeitet mit der Library "requests". Gegebenenfalls muss diese mit "pip install requests" nachinstalliert werden.
 #apiUrl = "https://api.ciscospark.com/v1/webhooks/"+os.getenv("WEBHOOKID")
 #print (apiUrl)
@@ -26,7 +26,7 @@ def listRooms():
 
     for id in data['items']:
         if str(os.getenv("CLASSPREFIX")) in str(id['title']):
-            print ('Room ' + str(i) + ' : '+ str(id['title']))
+            print ('Raum ' + str(i) + ' : '+ str(id['title']))
             i+=1
 
 def deleteRooms():
@@ -43,7 +43,7 @@ def deleteRooms():
             httpHeaders = {"Content-type" : "application/json", "Authorization" : "Bearer " + access_token}
             response = requests.delete(url=apiUrl, headers=httpHeaders)
             if (response.status_code==204):
-                print ('Webhook ' + str(i) + ' : '+ str(id['title']) + ' gelöscht')
+                print ('Raum ' + str(i) + ' : '+ str(id['title']) + ' gelöscht')
 
             i+=1
 
@@ -84,14 +84,20 @@ def main():
     i=0
 
     while i==0:
-        Eingabe=int(input('Liste der fraglichen Webhooks 1\nLöschen der Webhooks 2\nListe der Räume 3\nLöschen der Räume 4\n'))
+        Eingabe=int(input('\nInitialisieren der Laborumgebung 1\nListe der fraglichen Webhooks 2\nLöschen der Webhooks 3\nListe der Räume 4\nLöschen der Räume 5\nAlles löschen 6\n-> '))
         if (Eingabe==1):
-            listWebhooks()
+            print (str(initLab.initLab()))
         if (Eingabe==2):
-            deleteWebhooks()
+            listWebhooks()
         if (Eingabe==3):
-            listRooms()
+            deleteWebhooks()
         if (Eingabe==4):
+            listRooms()
+        if (Eingabe==5):
             deleteRooms()
+        if (Eingabe==6):
+            deleteRooms()
+            deleteWebhooks()
+        
 
 main()
